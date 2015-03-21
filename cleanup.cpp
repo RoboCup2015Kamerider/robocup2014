@@ -45,7 +45,6 @@ public:
 	double getSpeed();
 	Point  getPosition();
 	Vector3d* gethline();
-
 	bool findTable(int& im, int& jm, int ID);
 	int getPointDistance(int i, int j, int camID);
 
