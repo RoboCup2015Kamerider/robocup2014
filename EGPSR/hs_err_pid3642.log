@@ -1,0 +1,399 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb65ca375, pid=3642, tid=3056850688
+#
+# JRE version: 6.0_27-b27
+# Java VM: OpenJDK Server VM (20.0-b12 mixed mode, sharing linux-x86 )
+# Derivative: IcedTea6 1.12.6
+# Distribution: Ubuntu 12.04 LTS, package 6b27-1.12.6-1ubuntu0.12.04.4
+# Problematic frame:
+# C  [libstdc++.so.6+0x92375]  std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&)+0x15
+#
+# If you would like to submit a bug report, please include
+# instructions how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-6/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x09f1c400):  JavaThread "main" [_thread_in_native, id=3642, stack(0xbf825000,0xbf875000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x39313330
+
+Registers:
+EAX=0x39313334, EBX=0xb6614ff4, ECX=0xbf8713d0, EDX=0xbf8712e4
+ESP=0xbf870d90, EBP=0xbf871588, ESI=0x00000000, EDI=0x00000000
+EIP=0xb65ca375, EFLAGS=0x00010292, CR2=0x39313330
+
+Top of Stack: (sp=0xbf870d90)
+0xbf870d90:   00000000 00064681 bf870db8 0807d161
+0xbf870da0:   bf870e44 bf8712e0 bf8713d0 5ab0bc00
+0xbf870db0:   00000000 00064681 00064681 0806b6fb
+0xbf870dc0:   bf8713a4 bf8712f8 bf8713d0 00000000
+0xbf870dd0:   00000000 00000000 00000000 00000000
+0xbf870de0:   00000000 09e7e278 09ef85c8 b63ba5e9
+0xbf870df0:   00000001 bf87111c b64e9440 b65e151f
+0xbf870e00:   00000000 00000000 bf870e28 0806472c 
+
+Instructions: (pc=0xb65ca375)
+0xb65ca355:   90 90 90 90 90 90 90 90 90 90 90 53 83 ec 28 8b
+0xb65ca365:   44 24 34 e8 7a 41 fb ff 81 c3 87 ac 04 00 8b 00
+0xb65ca375:   8b 50 fc 8d 48 f4 85 d2 78 19 3b 8b a4 fc ff ff
+0xb65ca385:   75 34 8b 54 24 30 89 02 83 c4 28 5b c3 8d b6 00 
+
+Register to memory mapping:
+
+EAX=0x39313334 is an unknown value
+EBX=0xb6614ff4: <offset 0xdcff4> in /usr/lib/i386-linux-gnu/libstdc++.so.6 at 0xb6538000
+ECX=0xbf8713d0 is pointing into the stack for thread: 0x09f1c400
+EDX=0xbf8712e4 is pointing into the stack for thread: 0x09f1c400
+ESP=0xbf870d90 is pointing into the stack for thread: 0x09f1c400
+EBP=0xbf871588 is pointing into the stack for thread: 0x09f1c400
+ESI=0x00000000 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0xbf825000,0xbf875000],  sp=0xbf870d90,  free space=303k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libstdc++.so.6+0x92375]  std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&)+0x15
+C  [sigserver+0x273e1]  _ZNKSt9basic_iosIcSt11char_traitsIcEE4failEv@@GLIBCXX_3.4+0x273e1
+C  [sigserver+0x2ec5c]  _ZNKSt9basic_iosIcSt11char_traitsIcEE4failEv@@GLIBCXX_3.4+0x2ec5c
+C  [sigserver+0x3c375]  _ZNKSt9basic_iosIcSt11char_traitsIcEE4failEv@@GLIBCXX_3.4+0x3c375
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x09f30800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3650, stack(0xb230d000,0xb235e000)]
+  0x09ee3c00 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=3649, stack(0xb1d99000,0xb1e1a000)]
+  0x09ee2400 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=3648, stack(0xb1e1a000,0xb1e9b000)]
+  0x09ee0800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3647, stack(0xb235e000,0xb23af000)]
+  0x09e8c000 JavaThread "Finalizer" daemon [_thread_blocked, id=3646, stack(0xb23af000,0xb2400000)]
+  0x09e85000 JavaThread "Reference Handler" daemon [_thread_blocked, id=3645, stack(0xb2520000,0xb2571000)]
+=>0x09f1c400 JavaThread "main" [_thread_in_native, id=3642, stack(0xbf825000,0xbf875000)]
+
+Other Threads:
+  0x09e83800 VMThread [stack: 0xb2571000,0xb25f2000] [id=3644]
+  0x09f32800 WatcherThread [stack: 0xb1d18000,0xb1d99000] [id=3651]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 12160K, used 641K [0x6a140000, 0x6ae70000, 0x74890000)
+  eden space 10816K,   5% used [0x6a140000, 0x6a1e06d8, 0x6abd0000)
+  from space 1344K,   0% used [0x6abd0000, 0x6abd0000, 0x6ad20000)
+  to   space 1344K,   0% used [0x6ad20000, 0x6ad20000, 0x6ae70000)
+ tenured generation   total 26880K, used 16126K [0x74890000, 0x762d0000, 0x89740000)
+   the space 26880K,  59% used [0x74890000, 0x7584f938, 0x7584fa00, 0x762d0000)
+ compacting perm gen  total 16384K, used 2620K [0x89740000, 0x8a740000, 0x91740000)
+   the space 16384K,  15% used [0x89740000, 0x899cf068, 0x899cf200, 0x8a740000)
+    ro space 10240K,  74% used [0x91740000, 0x91ea8b40, 0x91ea8c00, 0x92140000)
+    rw space 12288K,  60% used [0x92140000, 0x9288ee48, 0x9288f000, 0x92d40000)
+
+Code Cache  [0xb2a76000, 0xb2cb6000, 0xb5a76000)
+ total_blobs=381 nmethods=264 adapters=71 free_code_cache=49303552 largest_free_block=13248
+
+Dynamic libraries:
+08048000-0816d000 r-xp 00000000 08:01 409180     /home/robocup/sigverse-2.2.2/bin/sigserver
+0816d000-0816e000 r--p 00124000 08:01 409180     /home/robocup/sigverse-2.2.2/bin/sigserver
+0816e000-0816f000 rw-p 00125000 08:01 409180     /home/robocup/sigverse-2.2.2/bin/sigserver
+0816f000-0817d000 rw-p 00000000 00:00 0 
+09e1c000-0e83c000 rw-p 00000000 00:00 0          [heap]
+6a140000-6ae70000 rw-p 00000000 00:00 0 
+6ae70000-74890000 rw-p 00000000 00:00 0 
+74890000-762d0000 rw-p 00000000 00:00 0 
+762d0000-89740000 rw-p 00000000 00:00 0 
+89740000-8a740000 rw-p 00000000 00:00 0 
+8a740000-91740000 rw-p 00000000 00:00 0 
+91740000-91ea9000 r--s 00001000 08:01 938309     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/classes.jsa
+91ea9000-92140000 rw-p 00000000 00:00 0 
+92140000-9288f000 rw-p 0076a000 08:01 938309     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/classes.jsa
+9288f000-92d40000 rw-p 00000000 00:00 0 
+92d40000-92e3d000 rw-p 00eb9000 08:01 938309     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/classes.jsa
+92e3d000-93140000 rw-p 00000000 00:00 0 
+93140000-93148000 r-xs 00fb6000 08:01 938309     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/classes.jsa
+93148000-93540000 rw-p 00000000 00:00 0 
+b1300000-b13c6000 rw-p 00000000 00:00 0 
+b13c6000-b1400000 ---p 00000000 00:00 0 
+b1500000-b15ce000 rw-p 00000000 00:00 0 
+b15ce000-b1600000 ---p 00000000 00:00 0 
+b1600000-b16fe000 rw-p 00000000 00:00 0 
+b16fe000-b1700000 ---p 00000000 00:00 0 
+b1700000-b17e7000 rw-p 00000000 00:00 0 
+b17e7000-b1800000 ---p 00000000 00:00 0 
+b1800000-b18fe000 rw-p 00000000 00:00 0 
+b18fe000-b1900000 ---p 00000000 00:00 0 
+b1900000-b19f8000 rw-p 00000000 00:00 0 
+b19f8000-b1a00000 ---p 00000000 00:00 0 
+b1a00000-b1afd000 rw-p 00000000 00:00 0 
+b1afd000-b1b00000 ---p 00000000 00:00 0 
+b1b00000-b1bfc000 rw-p 00000000 00:00 0 
+b1bfc000-b1c00000 ---p 00000000 00:00 0 
+b1c84000-b1c85000 r--p 00000000 00:00 0 
+b1c85000-b1c86000 r--s 0000c000 08:01 409355     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-xml.jar
+b1c86000-b1c87000 r--s 00002000 08:01 409354     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-xml-util.jar
+b1c87000-b1c8f000 r--s 00065000 08:01 409347     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-ogl.jar
+b1c8f000-b1c96000 r--s 00015000 08:01 409346     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-norender.jar
+b1c96000-b1c9a000 r--s 00018000 08:01 409344     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-jsai.jar
+b1c9a000-b1c9c000 r--s 00012000 08:01 409342     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-java-sai.jar
+b1c9c000-b1c9e000 r--s 00004000 08:01 409345     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-net.jar
+b1c9e000-b1ca7000 r--s 00069000 08:01 409341     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-j3d.jar
+b1ca7000-b1ca8000 r--s 00002000 08:01 409340     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-images.jar
+b1ca8000-b1cac000 r--s 0000a000 08:01 409351     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-sai.jar
+b1cac000-b1caf000 r--s 0001a000 08:01 409339     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-external-sai.jar
+b1caf000-b1cb2000 r--s 00028000 08:01 409338     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-ecmascript.jar
+b1cb2000-b1cb6000 r--s 0001e000 08:01 409337     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-eai.jar
+b1cb6000-b1cb8000 r--s 00005000 08:01 409335     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-config.jar
+b1cb8000-b1cba000 r--s 00008000 08:01 409353     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-script-base.jar
+b1cba000-b1cbd000 r--s 0001d000 08:01 409350     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-runtime.jar
+b1cbd000-b1cc4000 r--s 000fc000 08:01 791636     /usr/lib/jvm/java-6-openjdk-common/jre/lib/resources.jar
+b1cc4000-b1cc5000 r--s 00004000 08:01 409343     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-jaxp.jar
+b1cc5000-b1cc7000 r--s 00012000 08:01 409352     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-sav.jar
+b1cc7000-b1ccf000 r--s 00029000 08:01 409336     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-core.jar
+b1ccf000-b1cd3000 r--s 0003d000 08:01 409348     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-parser.jar
+b1cd3000-b1cd5000 r--s 0000c000 08:01 409349     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-render.jar
+b1cd5000-b1cde000 r--s 000cb000 08:01 409334     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-common.jar
+b1cde000-b1ce0000 r--s 00045000 08:01 409330     /home/robocup/sigverse-2.2.2/share/sigverse/jar/vecmath.jar
+b1ce0000-b1ce2000 r--s 0000b000 08:01 409329     /home/robocup/sigverse-2.2.2/share/sigverse/jar/uri.jar
+b1ce2000-b1ce4000 r--s 00005000 08:01 409328     /home/robocup/sigverse-2.2.2/share/sigverse/jar/units-0.01.jar
+b1ce4000-b1ce7000 r--s 00034000 08:01 409324     /home/robocup/sigverse-2.2.2/share/sigverse/jar/odejava.jar
+b1ce7000-b1cef000 r--s 0004f000 08:01 409323     /home/robocup/sigverse-2.2.2/share/sigverse/jar/log4j.jar
+b1cef000-b1d18000 r--s 00284000 08:01 409315     /home/robocup/sigverse-2.2.2/share/sigverse/jar/gt2-main.jar
+b1d18000-b1d19000 ---p 00000000 00:00 0 
+b1d19000-b1d99000 rw-p 00000000 00:00 0          [stack:3651]
+b1d99000-b1d9c000 ---p 00000000 00:00 0 
+b1d9c000-b1e1a000 rw-p 00000000 00:00 0          [stack:3649]
+b1e1a000-b1e1d000 ---p 00000000 00:00 0 
+b1e1d000-b1e9b000 rw-p 00000000 00:00 0          [stack:3648]
+b1e9b000-b2000000 r--p 001c8000 08:01 794589     /usr/lib/locale/locale-archive
+b2000000-b2200000 r--p 00000000 08:01 794589     /usr/lib/locale/locale-archive
+b2200000-b2221000 rw-p 00000000 00:00 0 
+b2221000-b2300000 ---p 00000000 00:00 0 
+b2300000-b2306000 r--s 0008c000 08:01 409321     /home/robocup/sigverse-2.2.2/share/sigverse/jar/js.jar
+b2306000-b230d000 r--s 00118000 08:01 409320     /home/robocup/sigverse-2.2.2/share/sigverse/jar/jogl.jar
+b230d000-b2310000 ---p 00000000 00:00 0 
+b2310000-b235e000 rw-p 00000000 00:00 0          [stack:3650]
+b235e000-b2361000 ---p 00000000 00:00 0 
+b2361000-b23af000 rw-p 00000000 00:00 0          [stack:3647]
+b23af000-b23b2000 ---p 00000000 00:00 0 
+b23b2000-b2400000 rw-p 00000000 00:00 0          [stack:3646]
+b2400000-b24f5000 rw-p 00000000 00:00 0 
+b24f5000-b2500000 ---p 00000000 00:00 0 
+b2500000-b2501000 r--s 0000a000 08:01 409331     /home/robocup/sigverse-2.2.2/share/sigverse/jar/vlc_uri.jar
+b2501000-b2503000 r--s 00001000 08:01 409322     /home/robocup/sigverse-2.2.2/share/sigverse/jar/jutils.jar
+b2503000-b2505000 r--s 00005000 08:01 409319     /home/robocup/sigverse-2.2.2/share/sigverse/jar/joal.jar
+b2505000-b2507000 r--s 00008000 08:01 409318     /home/robocup/sigverse-2.2.2/share/sigverse/jar/jinput.jar
+b2507000-b250f000 r--s 00063000 08:01 409317     /home/robocup/sigverse-2.2.2/share/sigverse/jar/j3d-org.jar
+b250f000-b2512000 r--s 00031000 08:01 409316     /home/robocup/sigverse-2.2.2/share/sigverse/jar/httpclient.jar
+b2512000-b2513000 r--s 00005000 08:01 409314     /home/robocup/sigverse-2.2.2/share/sigverse/jar/gnu-regexp-1.0.8.jar
+b2513000-b2520000 r--s 0002d000 08:01 409313     /home/robocup/sigverse-2.2.2/share/sigverse/jar/geoapi.jar
+b2520000-b2523000 ---p 00000000 00:00 0 
+b2523000-b2571000 rw-p 00000000 00:00 0          [stack:3645]
+b2571000-b2572000 ---p 00000000 00:00 0 
+b2572000-b25f2000 rw-p 00000000 00:00 0          [stack:3644]
+b25f2000-b2786000 r--s 03822000 08:01 937992     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar
+b2786000-b278f000 rw-p 00000000 00:00 0 
+b278f000-b27c7000 rw-p 00000000 00:00 0 
+b27c7000-b27d5000 rw-p 00000000 00:00 0 
+b27d5000-b286f000 rw-p 00000000 00:00 0 
+b286f000-b2876000 rw-p 00000000 00:00 0 
+b2876000-b28c2000 rw-p 00000000 00:00 0 
+b28c2000-b28d0000 rw-p 00000000 00:00 0 
+b28d0000-b296a000 rw-p 00000000 00:00 0 
+b296a000-b2972000 rw-p 00000000 00:00 0 
+b2972000-b29aa000 rw-p 00000000 00:00 0 
+b29aa000-b29bf000 rw-p 00000000 00:00 0 
+b29bf000-b2a76000 rw-p 00000000 00:00 0 
+b2a76000-b2cb6000 rwxp 00000000 00:00 0 
+b2cb6000-b5a76000 rw-p 00000000 00:00 0 
+b5a76000-b5a8a000 r-xp 00000000 08:01 2098161    /lib/i386-linux-gnu/libz.so.1.2.3.4
+b5a8a000-b5a8b000 r--p 00013000 08:01 2098161    /lib/i386-linux-gnu/libz.so.1.2.3.4
+b5a8b000-b5a8c000 rw-p 00014000 08:01 2098161    /lib/i386-linux-gnu/libz.so.1.2.3.4
+b5a8c000-b5a8d000 r--s 00003000 08:01 409312     /home/robocup/sigverse-2.2.2/share/sigverse/jar/dxinput.jar
+b5a8d000-b5a91000 r--s 00039000 08:01 409310     /home/robocup/sigverse-2.2.2/share/sigverse/jar/dis.jar
+b5a91000-b5a9a000 r--s 00081000 08:01 409309     /home/robocup/sigverse-2.2.2/share/sigverse/jar/aviatrix3d-all.jar
+b5a9a000-b5a9f000 r--s 0003c000 08:01 409307     /home/robocup/sigverse-2.2.2/share/sigverse/jar/FastInfoset.jar
+b5a9f000-b5aa0000 r--s 00001000 08:01 409332     /home/robocup/sigverse-2.2.2/share/sigverse/jar/xj3d-all.jar
+b5aa0000-b5aa3000 r--s 00031000 08:01 791411     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunjce_provider.jar
+b5aa3000-b5aa5000 r--s 0000f000 08:01 791322     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/pulse-java.jar
+b5aa5000-b5aa8000 r--s 00077000 08:01 791393     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/localedata.jar
+b5aa8000-b5aaa000 r--s 00001000 08:01 791403     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/dnsns.jar
+b5aaa000-b5ab5000 r-xp 00000000 08:01 2098101    /lib/i386-linux-gnu/libnss_files-2.15.so
+b5ab5000-b5ab6000 r--p 0000a000 08:01 2098101    /lib/i386-linux-gnu/libnss_files-2.15.so
+b5ab6000-b5ab7000 rw-p 0000b000 08:01 2098101    /lib/i386-linux-gnu/libnss_files-2.15.so
+b5ab7000-b5ac1000 r-xp 00000000 08:01 2098105    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b5ac1000-b5ac2000 r--p 00009000 08:01 2098105    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b5ac2000-b5ac3000 rw-p 0000a000 08:01 2098105    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b5ac3000-b5ad9000 r-xp 00000000 08:01 2098095    /lib/i386-linux-gnu/libnsl-2.15.so
+b5ad9000-b5ada000 r--p 00015000 08:01 2098095    /lib/i386-linux-gnu/libnsl-2.15.so
+b5ada000-b5adb000 rw-p 00016000 08:01 2098095    /lib/i386-linux-gnu/libnsl-2.15.so
+b5adb000-b5add000 rw-p 00000000 00:00 0 
+b5add000-b5ae4000 r-xp 00000000 08:01 2098097    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b5ae4000-b5ae5000 r--p 00006000 08:01 2098097    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b5ae5000-b5ae6000 rw-p 00007000 08:01 2098097    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b5ae6000-b5ae7000 r--s 00004000 08:01 409308     /home/robocup/sigverse-2.2.2/share/sigverse/jar/X3DParser.jar
+b5ae7000-b5ae8000 r--s 00007000 08:01 1062977    /usr/share/java/java-atk-wrapper.jar
+b5ae8000-b5aec000 r--s 00039000 08:01 791297     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunpkcs11.jar
+b5aec000-b5af3000 rw-p 00000000 00:00 0 
+b5af3000-b5afa000 r-xp 00000000 08:01 938020     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b5afa000-b5afb000 r--p 00006000 08:01 938020     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b5afb000-b5afc000 rw-p 00007000 08:01 938020     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b5afc000-b5b04000 rw-s 00000000 08:01 2240449    /tmp/hsperfdata_robocup/3642
+b5b04000-b5b2a000 r-xp 00000000 08:01 938006     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b5b2a000-b5b2b000 r--p 00025000 08:01 938006     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b5b2b000-b5b2d000 rw-p 00026000 08:01 938006     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b5b2d000-b5b38000 r-xp 00000000 08:01 938035     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b5b38000-b5b39000 ---p 0000b000 08:01 938035     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b5b39000-b5b3a000 r--p 0000b000 08:01 938035     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b5b3a000-b5b3b000 rw-p 0000c000 08:01 938035     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b5b3b000-b5b3c000 ---p 00000000 00:00 0 
+b5b3c000-b633f000 rw-p 00000000 00:00 0          [stack:3643]
+b633f000-b6342000 r-xp 00000000 08:01 2098063    /lib/i386-linux-gnu/libdl-2.15.so
+b6342000-b6343000 r--p 00002000 08:01 2098063    /lib/i386-linux-gnu/libdl-2.15.so
+b6343000-b6344000 rw-p 00003000 08:01 2098063    /lib/i386-linux-gnu/libdl-2.15.so
+b6344000-b64e7000 r-xp 00000000 08:01 2098050    /lib/i386-linux-gnu/libc-2.15.so
+b64e7000-b64e9000 r--p 001a3000 08:01 2098050    /lib/i386-linux-gnu/libc-2.15.so
+b64e9000-b64ea000 rw-p 001a5000 08:01 2098050    /lib/i386-linux-gnu/libc-2.15.so
+b64ea000-b64ee000 rw-p 00000000 00:00 0 
+b64ee000-b650a000 r-xp 00000000 08:01 2098071    /lib/i386-linux-gnu/libgcc_s.so.1
+b650a000-b650b000 r--p 0001b000 08:01 2098071    /lib/i386-linux-gnu/libgcc_s.so.1
+b650b000-b650c000 rw-p 0001c000 08:01 2098071    /lib/i386-linux-gnu/libgcc_s.so.1
+b650c000-b6536000 r-xp 00000000 08:01 2098082    /lib/i386-linux-gnu/libm-2.15.so
+b6536000-b6537000 r--p 00029000 08:01 2098082    /lib/i386-linux-gnu/libm-2.15.so
+b6537000-b6538000 rw-p 0002a000 08:01 2098082    /lib/i386-linux-gnu/libm-2.15.so
+b6538000-b6610000 r-xp 00000000 08:01 791700     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6610000-b6611000 ---p 000d8000 08:01 791700     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6611000-b6615000 r--p 000d8000 08:01 791700     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6615000-b6616000 rw-p 000dc000 08:01 791700     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6616000-b661d000 rw-p 00000000 00:00 0 
+b661d000-b6978000 r-xp 00000000 08:01 805332     /usr/lib/libxerces-c-3.1.so
+b6978000-b6979000 ---p 0035b000 08:01 805332     /usr/lib/libxerces-c-3.1.so
+b6979000-b6985000 r--p 0035b000 08:01 805332     /usr/lib/libxerces-c-3.1.so
+b6985000-b69a7000 rw-p 00367000 08:01 805332     /usr/lib/libxerces-c-3.1.so
+b69a7000-b6a85000 r-xp 00000000 08:01 1071970    /usr/local/lib/libode.so.3.0.0
+b6a85000-b6a86000 ---p 000de000 08:01 1071970    /usr/local/lib/libode.so.3.0.0
+b6a86000-b6a87000 r--p 000de000 08:01 1071970    /usr/local/lib/libode.so.3.0.0
+b6a87000-b6a88000 rw-p 000df000 08:01 1071970    /usr/local/lib/libode.so.3.0.0
+b6a88000-b6a8d000 rw-p 00000000 00:00 0 
+b6a8d000-b6aa4000 r-xp 00000000 08:01 2098130    /lib/i386-linux-gnu/libpthread-2.15.so
+b6aa4000-b6aa5000 r--p 00016000 08:01 2098130    /lib/i386-linux-gnu/libpthread-2.15.so
+b6aa5000-b6aa6000 rw-p 00017000 08:01 2098130    /lib/i386-linux-gnu/libpthread-2.15.so
+b6aa6000-b6aae000 rw-p 00000000 00:00 0 
+b6aae000-b6aaf000 rw-p 00000000 00:00 0 
+b6aaf000-b6ab0000 r--p 00000000 00:00 0 
+b6ab0000-b6ab7000 r-xp 00000000 08:01 2098136    /lib/i386-linux-gnu/librt-2.15.so
+b6ab7000-b6ab8000 r--p 00006000 08:01 2098136    /lib/i386-linux-gnu/librt-2.15.so
+b6ab8000-b6ab9000 rw-p 00007000 08:01 2098136    /lib/i386-linux-gnu/librt-2.15.so
+b6ab9000-b6abc000 r-xp 00000000 08:01 792075     /usr/lib/i386-linux-gnu/gconv/UTF-16.so
+b6abc000-b6abd000 r--p 00002000 08:01 792075     /usr/lib/i386-linux-gnu/gconv/UTF-16.so
+b6abd000-b6abe000 rw-p 00003000 08:01 792075     /usr/lib/i386-linux-gnu/gconv/UTF-16.so
+b6abe000-b6ac5000 r--s 00000000 08:01 792080     /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+b6ac5000-b6ac6000 rw-p 00000000 00:00 0 
+b6ac6000-b72e6000 r-xp 00000000 08:01 937999     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b72e6000-b732b000 r--p 0081f000 08:01 937999     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b732b000-b733a000 rw-p 00864000 08:01 937999     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b733a000-b7756000 rw-p 00000000 00:00 0 
+b7756000-b7757000 r-xp 00000000 00:00 0          [vdso]
+b7757000-b7777000 r-xp 00000000 08:01 2098030    /lib/i386-linux-gnu/ld-2.15.so
+b7777000-b7778000 r--p 0001f000 08:01 2098030    /lib/i386-linux-gnu/ld-2.15.so
+b7778000-b7779000 rw-p 00020000 08:01 2098030    /lib/i386-linux-gnu/ld-2.15.so
+bf825000-bf828000 ---p 00000000 00:00 0 
+bf829000-bf875000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Djava.library.path=/tmp 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=/opt/ros/hydro/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/robocup/sigverse-2.2.2/bin
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server:/opt/ros/hydro/lib:/usr/local/lib
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x66e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x66e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x530310], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5332a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x5332a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x5332a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5332a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 12.04 (precise)
+uname:Linux 3.8.0-29-generic #42~precise1-Ubuntu SMP Wed Aug 14 15:31:16 UTC 2013 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 7892, NOFILE 4096, AS infinity
+load average:0.15 0.25 0.45
+
+/proc/meminfo:
+MemTotal:        1026588 kB
+MemFree:           93080 kB
+Buffers:           41456 kB
+Cached:           440420 kB
+SwapCached:            0 kB
+Active:           458200 kB
+Inactive:         419128 kB
+Active(anon):     332664 kB
+Inactive(anon):    69040 kB
+Active(file):     125536 kB
+Inactive(file):   350088 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+HighTotal:        135112 kB
+HighFree:           1776 kB
+LowTotal:         891476 kB
+LowFree:           91304 kB
+SwapTotal:       1046524 kB
+SwapFree:        1046524 kB
+Dirty:                64 kB
+Writeback:             0 kB
+AnonPages:        395564 kB
+Mapped:           110392 kB
+Shmem:              6212 kB
+Slab:              29580 kB
+SReclaimable:      17708 kB
+SUnreclaim:        11872 kB
+KernelStack:        2960 kB
+PageTables:         7344 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1559816 kB
+Committed_AS:    2192276 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       24776 kB
+VmallocChunk:      96332 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       14328 kB
+DirectMap2M:      899072 kB
+
+
+CPU:total 1 (4 cores per cpu, 1 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt
+
+Memory: 4k page, physical 1026588k(93080k free), swap 1046524k(1046524k free)
+
+vm_info: OpenJDK Server VM (20.0-b12) for linux-x86 JRE (1.6.0_27-b27), built on Nov 16 2013 15:21:31 by "buildd" with gcc 4.6.3
+
+time: Thu May  1 21:48:25 2014
+elapsed time: 36 seconds
+

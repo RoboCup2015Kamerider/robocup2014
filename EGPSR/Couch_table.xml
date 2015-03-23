@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<define-class inherit="Entity.xml" name="_couch table">
+
+  <!--derived class from Entity.xml ALWAYS NEEDS body tag-->
+
+  <!--(otherwise sigserver.sh crashes)-->
+
+  <body filename="dummy-body.xml"/>
+
+  <x3d>
+    <filename>Couch_table.wrl</filename>
+  </x3d>
+</define-class>
