@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf8"?>
+<define-class name="Man_02" inherit="Agent.xml">
+
+   <set-attr-value name="scalex" value="0.7"/>
+   <set-attr-value name="scaley" value="0.7"/>
+   <set-attr-value name="scalez" value="0.7"/>
+
+   <x3d>
+       <filename>man_02.x3d</filename>
+   </x3d>
+
+</define-class>
