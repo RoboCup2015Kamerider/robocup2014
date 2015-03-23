@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf8"?>
+<world name="myworld1">
+  <gravity x="0.0" y="-980.7" z="0.0"/>
+  <instanciate class="seToy_D.xml">
+    <set-attr-value name="name" value="toy_D"/>
+    <set-attr-value name="language" value="c++"/>
+    <set-attr-value name="implementation"
+                    value="./ControllerSample.so"/>
+    <set-attr-value name="dynamics" value="true"/>
+    <set-attr-value name="x" value="0.0"/>
+    <set-attr-value name="y" value="60.0"/>
+    <set-attr-value name="z" value="0.0"/>
+    <set-attr-value name="mass" value="1.0"/>
+    <set-attr-value name="collision" value="true"/>
+  </instanciate>
+</world>
