@@ -1,0 +1,2 @@
+petbottle_0,petbottle_5,can_0,mayonaise_0,apple
+petbottle_1,petbottle_4,can_1,mugcup,banana
